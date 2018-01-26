@@ -415,17 +415,21 @@ function handleMouseDown(event) {
     if (wheels) {
 		// Check if the "random spin" button is pressed. Hardcoded button pos for now
 		var btnOffs = [ wheelPos[0] - 0.1279, wheelPos[1] - 0.1475 ]
-		var btnDist = Math.sqrt( btnOffs[0]*btnOffs[0], btnOffs[1]*btnOffs[1] )	
+
+		var btnDist = Math.sqrt( btnOffs[0]*btnOffs[0] + btnOffs[1]*btnOffs[1] )	
+		
+		var angle = wheelCoordsToAngle( wheelPos[0], wheelPos[1] );
 		if (btnDist < 0.07866) {
 			randomSpinAll();
-		} else {
+
+			// This angle check makes sure the grab angle is in the exposed part of the wheel mask
+		} else if ((angle <75.0) || (angle > 275.0)) {
 	    	for (var i=0; i < wheels.length; i++) {
+
 	    		if ( (wheels[i].innerRadius < grabRadius) &&
 	    			 (wheels[i].outerRadius > grabRadius) ) {
 	    			//console.log( "Grab wheel " + i );
 	    			grabbedWheel = i;
-
-					var angle = wheelCoordsToAngle( wheelPos[0], wheelPos[1] );
 	    			wheels[i].grabWheel( angle );
 	    		} 
 	    		// else {
