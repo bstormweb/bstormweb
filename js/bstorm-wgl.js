@@ -1,7 +1,5 @@
 "use strict";
 
-var LOCAL_TEST = true
-
 var xhttp;
 if (window.XMLHttpRequest) {
    xhttp = new XMLHttpRequest();
@@ -109,6 +107,10 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 	this.wordAng = 360.0 / wordlist.length
 	this.wordCapacity = wordCapacity
 	this.grabbed = false
+	
+	this.grabStartAngle = 0.0;
+	this.dragStartAngle = 0.0;
+
 	this.innerRadius = 0.0
 	this.outerRadius = 1.0
 
@@ -137,7 +139,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 
 
 	this.buildWheelGeom = function( innerRadius, outerRadius ) {
-		console.log("Build wheel geom " + innerRadius +" "+ outerRadius );
+		//console.log("Build wheel geom " + innerRadius +" "+ outerRadius );
 
 		//this.wheelBufferInfo = twgl.createBufferInfoFromArrays(gl, arrays);	
 		this.innerRadius = innerRadius;
@@ -225,7 +227,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 
 		if ((grabbedWheel<0) && (this.needsSnap) && ( absVel < 3.0)) {
 			this.snapNearestWord();
-			console.log("Snapped: max vel was " + this.dbgMaxVel );
+			//console.log("Snapped: max vel was " + this.dbgMaxVel );
 			this.dbgMaxVel = 0.0;
 			this.needsSnap = false;
 		}
@@ -287,11 +289,11 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 
 	this.wordIndexFromAngle = function( ang ) {
 		var normAng = ang % 360.0;
-		console.log("normAng is " + normAng )
+		//console.log("normAng is " + normAng )
 		var snappedAngle = (normAng + (this.wordAng * 0.5)) / 360.0;
-		console.log("snappedAngle is " + snappedAngle )
+		//console.log("snappedAngle is " + snappedAngle )
 		var wordIndex = Math.floor(snappedAngle * this.wordCapacity) % this.wordCapacity
-		console.log("wordIndex is " + wordIndex )
+		//console.log("wordIndex is " + wordIndex )
 
 		return wordIndex;
 	}
@@ -322,6 +324,22 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 		{
 			this.velHistory[i] = 0.0;
 		}
+	}
+
+	this.grabWheel = function( grabAngle ) {
+		this.grabStartAngle = grabAngle;
+		this.dragStartAngle = this.angle;
+
+		this.resetVelocity();
+	}
+
+	this.dragWheel = function( dragAngle ) {
+		var updAngle = this.dragStartAngle + (dragAngle - this.grabStartAngle);
+		this.angle = updAngle;
+		// console.log("dragWheel: dragStartAngle " + this.gragStartAngle + 
+		// 		               " dragAngle " + this.dragAngle + 
+		// 		               " grabStart " + this.grabStartAngle +
+		// 		               " result " + updAngle );
 	}
 
 	this.randomSpin = function() {
@@ -374,7 +392,7 @@ function wheelCoordsToAngle( x, y ) {
 
 function handleMouseDown(event) {
 
-	console.log("In handleMouseDown");
+	//console.log("In handleMouseDown");
 
 	if (!glcanvas) return;
 
@@ -404,11 +422,15 @@ function handleMouseDown(event) {
 	    	for (var i=0; i < wheels.length; i++) {
 	    		if ( (wheels[i].innerRadius < grabRadius) &&
 	    			 (wheels[i].outerRadius > grabRadius) ) {
-	    			console.log( "Grab wheel " + i );
+	    			//console.log( "Grab wheel " + i );
 	    			grabbedWheel = i;
-	    		} else {
-	    			console.log( "Didn't grab "+i+" " + [ wheels[i].innerRadius, wheels[i].outerRadius ])
-	    		}
+
+					var angle = wheelCoordsToAngle( wheelPos[0], wheelPos[1] );
+	    			wheels[i].grabWheel( angle );
+	    		} 
+	    		// else {
+	    		// 	console.log( "Didn't grab "+i+" " + [ wheels[i].innerRadius, wheels[i].outerRadius ])
+	    		// }
 	    	}
 	    }    
 	}
@@ -449,8 +471,10 @@ function handleMouseDown(event) {
 
     if (grabbedWheel >= 0) {
     	var angle = wheelCoordsToAngle( wheelPos[0], wheelPos[1] );
-    	wheels[grabbedWheel].angle = angle;
-    	console.log("Setting angle to " + angle );
+
+    	//wheels[grabbedWheel].angle = wheels[grabbedWheel].grabAngle + angle;
+    	wheels[grabbedWheel].dragWheel( angle );
+    	//console.log("Setting angle, grabAngle " + wheels[grabbedWheel].grabAngle + " angle  " + angle );
     }
 }
 
@@ -567,7 +591,7 @@ function getXmlWords( wheelTag )
 	}
 	
 
-	console.log( resultWords );
+	//console.log( resultWords );
 	return resultWords;
 }
 
@@ -587,9 +611,9 @@ function setup_bstorm( canvas, xmlWheelInfo )
 	title = getXmlValue( xmlWheelInfo, "title", title );
 	creator = getXmlValue( xmlWheelInfo, "creator", creator );
 	desc = getXmlValue( xmlWheelInfo, "desc", desc );
-	console.log( "title: " + title )
-	console.log( "creator: " + creator )
-	console.log( "desc: " + desc )
+	// console.log( "title: " + title )
+	// console.log( "creator: " + creator )
+	// console.log( "desc: " + desc )
 
 	var xmlWheels = xmlWheelInfo.getElementsByTagName("wheel");
 	if (xmlWheels.length != 3) {
@@ -661,7 +685,7 @@ function bstorm_main()
 	xhttp.onreadystatechange = function() {
     	var xmlDoc = this.responseXML;	
     	if (this.readyState == 4 && this.status == 200) {
-    		console.log( "fetched wheel xml state: " + this.readyState + " response " + xmlDoc )
+    		//console.log( "fetched wheel xml state: " + this.readyState + " response " + xmlDoc )
     		setup_bstorm( canvas, xmlDoc );
     	}
 	}
@@ -676,12 +700,9 @@ function bstorm_main()
 	glcanvas = canvas;
 
 	// Request texture resources
-	var backgroundImage = "https://static1.squarespace.com/static/583345129f74565d9238a342/t/583cd871d482e9bbbefbdc92/1480382577994/bstorm_background.png";
-	var wheelMaskImage = "https://static1.squarespace.com/static/583345129f74565d9238a342/t/583cd875d482e9bbbefbdccf/1480382582555/bstorm_wheelmask.png";
-	if (LOCAL_TEST) {
-		backgroundImage = "imgs/bstorm_background.png";
-		wheelMaskImage = "imgs/bstorm_wheelmask.png";
-	}
+	var backgroundImage = "imgs/bstorm_background.png";
+	var wheelMaskImage = "imgs/bstorm_wheelmask.png";
+
 
 	textures = twgl.createTextures( gl, 
 	{
