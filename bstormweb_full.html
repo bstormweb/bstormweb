@@ -21,16 +21,17 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
   <style>
   body {
     color: #fff;
     /*background-color: #6E665F;*/
     background-color: #4E463F;
   }
+  html,body{ margin:0; padding:0; height:100%; width:100%; overflow: hidden;}
   #glcanvas {
-      width: 80vw;
-      height: 80vw;
+      width: 100vw;
+      height: 100vh;
+      
   } 
   .bs-wordbox {
       display: block;
@@ -46,6 +47,16 @@
     display: inline;
     border: none;
   }
+
+  #controls {
+    width: 300px;
+    height: 200px;
+    top: 10px;
+    left:10px;
+    position: absolute;
+    z-index:500;
+  }
+
   </style>
 
   <!-- Favicon
@@ -64,26 +75,14 @@
 
 </head>
 <body>
+  <canvas id="bstorm_words" width="2048" height="2048" style="display:none"></canvas>
+  <canvas id="glcanvas" width="800" height="800" style=""></canvas>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 5%">
-
-        <canvas id="bstorm_words" width="2048" height="2048" style="display:none"></canvas>
-        
-        <canvas id="glcanvas" width="800" height="800" style=""></canvas>
-          <div class="bs-wordbox">
-            <h2 class="bs-wordbox" id="bstorm_inner">Inner Word</h2> &bull;
-            <h2 class="bs-wordbox" id="bstorm_middle">Middle Word</h2> &bull;
-            <h2 class="bs-wordbox" id="bstorm_outer">Outer Word</h2>
-          </div>        
-      </div>
-    </div>
+  <div id="controls">
+  asdadasd
+    <h2>hello test controls here</h2>
   </div>
+          
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
