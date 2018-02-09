@@ -8,6 +8,7 @@ if (window.XMLHttpRequest) {
 }
 
 var gl; // A global variable for the WebGL context
+
 var m4; // matrix math from twgl
 
 var programInfo;
@@ -41,7 +42,8 @@ var arrays = {
 var stopCount = 0;
 
 var u_transformWorld;
-var u_transformWheel;
+
+var worldInverse;
 
 var bstormBufferInfo;
 
@@ -62,6 +64,11 @@ var grabbedWheel = -1;
 var lastTime = 0.0;
 
 var glcanvas = null;
+
+var zoomLevel = 1.0;
+var offsetX = 0.0;
+var offsetY = 0.0;
+var fitHoriz = true;
 
 // -----------------------------------------------------------
 var bstormVertexSource = `
@@ -264,7 +271,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 		this.transformWheel = m4.rotationZ( this.angle * (Math.PI / 180.0) )
 	}
 
-	this.drawWheel = function( dt ) {
+	this.drawWheel = function( dt, transformWorld ) {
 
 		if (!this.uniforms) {
 			this.uniforms = {
@@ -274,7 +281,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 		}
 
 		this.uniforms.time += dt;
-		this.uniforms.u_transform = this.transformWheel;
+		this.uniforms.u_transform = m4.multiply( transformWorld, this.transformWheel );
 
 		twgl.setBuffersAndAttributes(gl, programInfo, this.wheelBufferInfo);
 		twgl.setUniforms(programInfo, this.uniforms );
@@ -371,19 +378,24 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 
 // -----------------------------------------------------------
 var mouseDown = false;
-var lastMouseX = null;
-var lastMouseY = null;
 
 function screenToWheelCoords( x, y ) {
 
 	// FIXME: this doesn't work if the div is resized
 
-	return [ (2.0 * (x / glcanvas.width)) - 1.0,
-	         (2.0 * (y / glcanvas.height)) - 1.0 ]
+
+
+	var pp = [ (2.0 * (x / glcanvas.width)) - 1.0,
+	           -((2.0 * (y / glcanvas.height)) - 1.0), 0.0 ]
+
+	var ppWheel = m4.transformPoint( worldInverse, pp );
+	console.log("Screen " + pp + "  wheel " + ppWheel );
+
+	return ppWheel;
 }
 
 function wheelCoordsToAngle( x, y ) {
-	var rawAngle = Math.atan2( -y, x ) * (180.0 / Math.PI);
+	var rawAngle = Math.atan2( y, x ) * (180.0 / Math.PI);
 	if (rawAngle < 0.0) {
 		rawAngle += 360.0;
 	}
@@ -405,16 +417,17 @@ function handleMouseDown(event) {
 	
 
     mouseDown = true
-    lastMouseX = event.clientX
-    lastMouseY = event.clientY
 
     // Wheel coords are -1,-1 to 1,1 and have 0,0 centered at wheel
     var wheelPos = screenToWheelCoords( event.layerX, event.layerY )
+    
+
     var grabRadius = Math.sqrt( wheelPos[0]*wheelPos[0] + wheelPos[1]*wheelPos[1]) / wheelSize;
+	console.log("Wheel Pos: " + wheelPos + " radius " + grabRadius );
 
     if (wheels) {
 		// Check if the "random spin" button is pressed. Hardcoded button pos for now
-		var btnOffs = [ wheelPos[0] - 0.1279, wheelPos[1] - 0.1475 ]
+		var btnOffs = [ wheelPos[0] - 0.1279, wheelPos[1] + 0.1475 ]
 
 		var btnDist = Math.sqrt( btnOffs[0]*btnOffs[0] + btnOffs[1]*btnOffs[1] )	
 		
@@ -464,9 +477,9 @@ function handleMouseDown(event) {
   function handleMouseMove(event) {
   	if (!glcanvas) return;
 
-    // if (!mouseDown) {
-    //   return;
-    // }
+    if (!mouseDown) {
+       return;
+    }
 
     var wheelPos = screenToWheelCoords( event.layerX, event.layerY );
     //console.log("Mouse Move " + wheelPos[0] + "  " + wheelPos[1] );
@@ -488,8 +501,24 @@ function bstorm_redraw( time )
 	twgl.resizeCanvasToDisplaySize(gl.canvas);
 	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
-	u_transformWorld = m4.identity();
-	u_transformWheel = m4.rotationZ( time * 0.0001 )
+	//u_transformWorld = m4.identity();
+	// zoomLevel = 1.0 + Math.sin(time*0.0001) * 0.5;	
+	// var xlate = m4.translation( [ Math.sin(time*0.00011) * 0.5, Math.cos(time*0.000141) * 0.5, 0.0] );
+
+	// zoomLevel = 2.0;
+	var aspect = gl.canvas.width / gl.canvas.height;
+
+	var xlate = m4.translation( [ offsetX, offsetY, 0.0] );
+	if (fitHoriz) {
+		var zoomAspect = [zoomLevel, zoomLevel*aspect, 1.0];	
+	} else {
+		var zoomAspect = [zoomLevel / aspect, zoomLevel, 1.0];	
+	}
+	u_transformWorld = m4.multiply( m4.scaling( zoomAspect ), xlate  );
+
+	//worldInverse = u_transformWorld
+	worldInverse = m4.inverse( u_transformWorld )
+	//worldInverse = m4.copy( u_transformWorld )
 
 	var uniformsBG = {
 		time: time * 0.001,
@@ -522,7 +551,7 @@ function bstorm_redraw( time )
 		
 		for (var i=0; i < wheels.length; i++) {
 			wheels[i].updateWheel( dt );
-			wheels[i].drawWheel( dt );
+			wheels[i].drawWheel( dt, u_transformWorld );
 		}
 	
 	}
@@ -670,6 +699,34 @@ function setup_bstorm( canvas, xmlWheelInfo )
 
 	requestAnimationFrame( bstorm_redraw );
 }
+
+function resetStopCount() {
+	if (stopCount>=1000) {
+		requestAnimationFrame( bstorm_redraw );
+	}
+	stopCount = 0;	
+}
+
+function bstorm_setZoomLevel( zoom ) {
+	zoomLevel = zoom;
+	resetStopCount()
+}
+
+function bstorm_setOffsetX( offsX ) {
+	offsetX = offsX;
+	resetStopCount()
+}
+
+function bstorm_setOffsetY( offsY ) {
+	offsetY = offsY;
+	resetStopCount()
+}
+
+function bstorm_setFitHoriz( doFitHoriz ) {
+	fitHoriz = doFitHoriz;
+	resetStopCount()
+}
+
 
 function bstorm_main() 
 {
