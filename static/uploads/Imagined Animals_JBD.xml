@@ -1,0 +1,73 @@
+<brainstormer>
+  <title>Imagined Animals</title>
+  <creator>Andrew Bosley</creator>
+  <desc>Create Fantastical and Imaginary Animals</desc>
+  <sku free="YES">com.tapnik.bstorm.wordset.animals</sku>
+    
+  <wheel>  
+    <word>Northern</word>
+    <word>Desert</word>
+    <word>Legendary</word>
+    <word>Patagonian</word>
+    <word>Arctic</word>
+    <word>Extinct</word>
+    <word>Aquatic</word>
+    <word>Western</word>
+    <word>Swampland</word>
+    <word>Appalacian</word>
+    <word>Mythical</word>
+    <word>Domesticated</word>
+  </wheel>
+ 
+  <wheel>
+    <word>Red-Tailed</word>
+    <word>Three Toed</word>
+    <word>Speckled</word>
+    <word>Armoured</word>
+    <word>Ringed</word>
+    <word>Burrowing</word>
+    <word>Flightless</word>
+    <word>Ridgeback</word>
+    <word>Hook-Beaked</word>
+    <word>Cold-Blooded</word>
+    <word>Striped</word>
+    <word>Miniature</word>
+      
+    <word>??</word>      
+    <word>??</word>
+    <word>??</word>
+    <word>THIS WHEEL SET</word>
+    <word>IS PLACEHOLDER</word>
+    <word>PLEASE IGNORE</word>
+    <word>??</word>
+    <word>??</word>
+    <word>??</word>
+      
+  </wheel>
+
+  <wheel>
+    <word>Skink</word>
+    <word>Penguin</word>
+    <word>Legendary</word>
+    <word>Canine</word>
+    <word>Osprey</word>
+    <word>Eagle</word>
+    <word>Warthog</word>
+    <word>Peccary</word>
+    <word>Toad</word>
+    <word>Turtle</word>
+    <word>Bobcat</word>
+    <word>Tuna</word>
+    <word>Possum</word>
+    <word>Bear</word>
+    <word>Moose</word>
+    <word>Rattler</word>
+    <word>Legendary</word>
+    <word>Otter</word>
+    <word>Reindeer</word>
+    <word>Tiger</word>
+    <word>Panda</word>
+    <word>Ocelot</word>
+    <word>Panther</word>
+  </wheel>
+</brainstormer>

@@ -13,18 +13,18 @@ var m4; // matrix math from twgl
 
 var programInfo;
 var arrays = {
-	position: [-1, -1, 0, 
-				1, -1, 0, 
-				-1, 1, 0, 
+	position: [-1, -1, 0,
+				1, -1, 0,
+				-1, 1, 0,
 				-1, 1, 0,
 				 1, -1, 0,
 				 1, 1, 0],
-    // position: [-0.9, -0.9, 0.0, 
-    // 	        0.9, -0.9, 0.0, 
-    // 	       -0.9,  0.9, 0.0, 
+    // position: [-0.9, -0.9, 0.0,
+    // 	        0.9, -0.9, 0.0,
+    // 	       -0.9,  0.9, 0.0,
 
-    // 	       -0.9,  0.9, 0.0, 
-    //             0.9, -0.9, 0.0, 
+    // 	       -0.9,  0.9, 0.0,
+    //             0.9, -0.9, 0.0,
     //             0.9,  0.9, 0.0 ],
 
     st: [  0.0, 1.0, 0.0,
@@ -98,7 +98,7 @@ varying vec2 stVarying;
 void main() {
    vec2 uv = gl_FragCoord.xy / resolution;
   // float color = 0.0;
-  
+
   gl_FragColor = texture2D( u_texture, stVarying );
   //gl_FragColor.a = max( 0.1, gl_FragColor.a );
 
@@ -114,7 +114,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 	this.wordAng = 360.0 / wordlist.length
 	this.wordCapacity = wordCapacity
 	this.grabbed = false
-	
+
 	this.grabStartAngle = 0.0;
 	this.dragStartAngle = 0.0;
 
@@ -141,14 +141,14 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 	// Initialize velHistory array
 	var VEL_HISTORY_SZ = 5;
 	while (this.velHistory.length < VEL_HISTORY_SZ) {
-		this.velHistory.push( 0.0 );		
+		this.velHistory.push( 0.0 );
 	}
 
 
 	this.buildWheelGeom = function( innerRadius, outerRadius ) {
 		//console.log("Build wheel geom " + innerRadius +" "+ outerRadius );
 
-		//this.wheelBufferInfo = twgl.createBufferInfoFromArrays(gl, arrays);	
+		//this.wheelBufferInfo = twgl.createBufferInfoFromArrays(gl, arrays);
 		this.innerRadius = innerRadius;
 		this.outerRadius = outerRadius;
 
@@ -157,7 +157,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 		var stData = []
 
 		for (var i=0; i < this.numSegments; i++)
-        {            
+        {
         	var i2 = i;
         	if (i == this.numSegments-1) {
         		i2 = 0;
@@ -168,33 +168,33 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 
             var s2 = s * 0.5;
             var c2 = c * 0.5;
-            
+
             // Inner rad
             posData.push( c * innerRadius * wheelSize ); // pos x
             posData.push( s * innerRadius * wheelSize ); // pos y
             posData.push( 0.0 ); // pos z
-            
+
             stData.push( (c2 * innerRadius) + 0.5); // st s
             stData.push( 1.0 - ((s2 * innerRadius) + 0.5)); // st t
             stData.push( 0.0 );
-            
+
             // Outer rad
             posData.push( c * outerRadius * wheelSize );
             posData.push( s * outerRadius * wheelSize );
             posData.push ( 0.0 );
-            
+
             stData.push( (c2 * outerRadius) + 0.5);
             stData.push( 1.0 - ((s2 * outerRadius) + 0.5) );
             stData.push( 0.0 );
-        }        
+        }
 
-        this.wheelBufferInfo = twgl.createBufferInfoFromArrays(gl, 
+        this.wheelBufferInfo = twgl.createBufferInfoFromArrays(gl,
         							{ position: posData, st: stData } );
 
 	}
 
 	this.updateWheelPhysics = function ( dt ) {
-		
+
 		// Use average velocity
 		var angVel = 0.0;
 		for (var i =0; i < this.velHistory.length; ++i)
@@ -202,7 +202,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 			angVel += this.velHistory[i];
 		}
 		angVel /= this.velHistory.length;
-		
+
 
 		// if (Math.abs(angVel) > 0.0) {
 		// 	console.log("ZZavgVel is " + angVel + " velHistory is " + this.velHistory );
@@ -213,7 +213,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 		angVel -= angVel * 0.10;
 
 		var clampedAngVel = angVel;
-		// Clamp velocity at MAXVEL, but don't change 
+		// Clamp velocity at MAXVEL, but don't change
 		// real vel to make momentum feel better
 		var maxVel = 1000.0;
 		if (clampedAngVel > maxVel) {
@@ -221,13 +221,13 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 		} else if (clampedAngVel < -maxVel) {
 			clampedAngVel = -maxVel;
 		}
-		
+
 		var rotAmount = clampedAngVel * dt;
 		this.angle += rotAmount;
 
 		// Check Snap (kMIN_VEL = 3.0)
 		var absVel = Math.abs(angVel);
-		
+
 		if (absVel > this.dbgMaxVel) {
 			this.dbgMaxVel = absVel;
 		}
@@ -242,7 +242,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 	}
 
 	this.updateWheel = function( dt ) {
-		
+
 		var angVel = (this.angle - this.lastAngle) / dt;
 		this.lastAngle = this.angle;
 
@@ -317,7 +317,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 
 		var diff = normAng - snappedAngle;
 		this.angle -= diff;
-		
+
 		this.resetVelocity();
 
 		if (this.wordElem) {
@@ -326,7 +326,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 	}
 
 	this.resetVelocity = function() {
-		this.lastAngle = this.angle;		
+		this.lastAngle = this.angle;
 		for (var i=0; i < this.velHistory.length; ++i)
 		{
 			this.velHistory[i] = 0.0;
@@ -343,8 +343,8 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 	this.dragWheel = function( dragAngle ) {
 		var updAngle = this.dragStartAngle + (dragAngle - this.grabStartAngle);
 		this.angle = updAngle;
-		// console.log("dragWheel: dragStartAngle " + this.gragStartAngle + 
-		// 		               " dragAngle " + this.dragAngle + 
+		// console.log("dragWheel: dragStartAngle " + this.gragStartAngle +
+		// 		               " dragAngle " + this.dragAngle +
 		// 		               " grabStart " + this.grabStartAngle +
 		// 		               " result " + updAngle );
 	}
@@ -353,7 +353,7 @@ function Wheel( wordlist, numSegments, wordCapacity, divId ) {
 
 		// TODO: handle locked wheels
 		//if (_locked) return; // No interaction for locked wheels
-    
+
 		var kMINRANDVEL = 20.0;
 		var kMAXRANDVEL = 60.0;
 		var randomVel = ( Math.random() - 0.5) * (kMAXRANDVEL*2);
@@ -411,16 +411,16 @@ function handleMouseDown(event) {
 
 	// reset the stop count
 	if (stopCount>=1000) {
-		stopCount = 0;	
+		stopCount = 0;
 		requestAnimationFrame( bstorm_redraw );
 	}
-	
+
 
     mouseDown = true
 
     // Wheel coords are -1,-1 to 1,1 and have 0,0 centered at wheel
     var wheelPos = screenToWheelCoords( event.layerX, event.layerY )
-    
+
 
     var grabRadius = Math.sqrt( wheelPos[0]*wheelPos[0] + wheelPos[1]*wheelPos[1]) / wheelSize;
 	console.log("Wheel Pos: " + wheelPos + " radius " + grabRadius );
@@ -429,8 +429,8 @@ function handleMouseDown(event) {
 		// Check if the "random spin" button is pressed. Hardcoded button pos for now
 		var btnOffs = [ wheelPos[0] - 0.1279, wheelPos[1] + 0.1475 ]
 
-		var btnDist = Math.sqrt( btnOffs[0]*btnOffs[0] + btnOffs[1]*btnOffs[1] )	
-		
+		var btnDist = Math.sqrt( btnOffs[0]*btnOffs[0] + btnOffs[1]*btnOffs[1] )
+
 		var angle = wheelCoordsToAngle( wheelPos[0], wheelPos[1] );
 		if (btnDist < 0.07866) {
 			randomSpinAll();
@@ -444,12 +444,12 @@ function handleMouseDown(event) {
 	    			//console.log( "Grab wheel " + i );
 	    			grabbedWheel = i;
 	    			wheels[i].grabWheel( angle );
-	    		} 
+	    		}
 	    		// else {
 	    		// 	console.log( "Didn't grab "+i+" " + [ wheels[i].innerRadius, wheels[i].outerRadius ])
 	    		// }
 	    	}
-	    }    
+	    }
 	}
   }
 
@@ -468,7 +468,7 @@ function handleMouseDown(event) {
     	wheels[grabbedWheel].needsSnap = true;
     }
 
-	grabbedWheel = -1;	
+	grabbedWheel = -1;
 
     var wheelPos = screenToWheelCoords( event.layerX, event.layerY );
 
@@ -502,7 +502,7 @@ function bstorm_redraw( time )
 	gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
 	//u_transformWorld = m4.identity();
-	// zoomLevel = 1.0 + Math.sin(time*0.0001) * 0.5;	
+	// zoomLevel = 1.0 + Math.sin(time*0.0001) * 0.5;
 	// var xlate = m4.translation( [ Math.sin(time*0.00011) * 0.5, Math.cos(time*0.000141) * 0.5, 0.0] );
 
 	// zoomLevel = 2.0;
@@ -510,9 +510,9 @@ function bstorm_redraw( time )
 
 	var xlate = m4.translation( [ offsetX, offsetY, 0.0] );
 	if (fitHoriz) {
-		var zoomAspect = [zoomLevel, zoomLevel*aspect, 1.0];	
+		var zoomAspect = [zoomLevel, zoomLevel*aspect, 1.0];
 	} else {
-		var zoomAspect = [zoomLevel / aspect, zoomLevel, 1.0];	
+		var zoomAspect = [zoomLevel / aspect, zoomLevel, 1.0];
 	}
 	u_transformWorld = m4.multiply( m4.scaling( zoomAspect ), xlate  );
 
@@ -527,7 +527,7 @@ function bstorm_redraw( time )
 		u_transform : u_transformWorld,
 	};
 
-	var uniformsMask = {	
+	var uniformsMask = {
 		time: time * 0.001,
 		resolution: [gl.canvas.width, gl.canvas.height],
 		u_texture : textures.wheelmask,
@@ -539,7 +539,7 @@ function bstorm_redraw( time )
 
 	gl.useProgram(programInfo.program );
 	twgl.setBuffersAndAttributes(gl, programInfo, bstormBufferInfo);
-	
+
 	twgl.setUniforms(programInfo, uniformsBG );
 	twgl.drawBufferInfo(gl, bstormBufferInfo);
 
@@ -548,12 +548,12 @@ function bstorm_redraw( time )
 		// Times are in ms, dt is in d(s)
 		var dt = (time - lastTime) / 1000.0;
 		lastTime = time;
-		
+
 		for (var i=0; i < wheels.length; i++) {
 			wheels[i].updateWheel( dt );
 			wheels[i].drawWheel( dt, u_transformWorld );
 		}
-	
+
 	}
 
 	twgl.setBuffersAndAttributes(gl, programInfo, bstormBufferInfo);
@@ -572,9 +572,9 @@ function bstorm_draw_words( canvas, wheelPos, wordList )
 
 	var ctx = canvas.getContext('2d');
 
-	ctx.fillStyle = "#333333"; 	
-	ctx.textAlign = "center";	
-	ctx.textBaseline = "middle";	
+	ctx.fillStyle = "#333333";
+	ctx.textAlign = "center";
+	ctx.textBaseline = "middle";
 	ctx.font = "24px Arial";
 
 /*
@@ -593,7 +593,7 @@ function bstorm_draw_words( canvas, wheelPos, wordList )
 	}
 */
 	var numWords = wordList.length;
-	var step = (Math.PI/180.0) * (360.0 / numWords); 
+	var step = (Math.PI/180.0) * (360.0 / numWords);
 	ctx.textAlign = 'left';
 	for (var i=0; i < numWords; i++) {
 		ctx.save()
@@ -620,9 +620,9 @@ function getXmlWords( wheelTag )
 	var resultWords = [];
 
 	for (var i=0, len = wordTags.length; i < len; i++ ) {
-		resultWords.push(wordTags[i].textContent);	
+		resultWords.push(wordTags[i].textContent);
 	}
-	
+
 
 	//console.log( resultWords );
 	return resultWords;
@@ -681,7 +681,7 @@ function setup_bstorm( canvas, xmlWheelInfo )
 	programInfo = twgl.createProgramInfo( gl, [ bstormVertexSource, bstormFragmentSource ] );
 	//programInfo = twgl.createProgramInfo(gl, ["vs", "fs"]);
 
-	bstormBufferInfo = twgl.createBufferInfoFromArrays(gl, arrays);	
+	bstormBufferInfo = twgl.createBufferInfoFromArrays(gl, arrays);
 
 	// Set clear color to black, fully opaque
 	//gl.clearColor( 0.43, 0.40, 0.38, 1.0);
@@ -704,7 +704,7 @@ function resetStopCount() {
 	if (stopCount>=1000) {
 		requestAnimationFrame( bstorm_redraw );
 	}
-	stopCount = 0;	
+	stopCount = 0;
 }
 
 function bstorm_setZoomLevel( zoom ) {
@@ -728,7 +728,7 @@ function bstorm_setFitHoriz( doFitHoriz ) {
 }
 
 
-function bstorm_main() 
+function bstorm_main( wheelSet )
 {
 	var canvas = document.getElementById("glcanvas");
 
@@ -741,19 +741,24 @@ function bstorm_main()
 		return;
 	}
 
+	console.log("Wheelset is ", wheelSet )
+	if (wheelSet === undefined) {
+		wheelSet = "/wheels/bstorm.xml";
+	}
+
 	// Fetch wheel XML
 	xhttp.overrideMimeType('text/xml');
 	xhttp.onreadystatechange = function() {
-    	var xmlDoc = this.responseXML;	
+    	var xmlDoc = this.responseXML;
     	if (this.readyState == 4 && this.status == 200) {
     		//console.log( "fetched wheel xml state: " + this.readyState + " response " + xmlDoc )
     		setup_bstorm( canvas, xmlDoc );
     	}
 	}
 
-	xhttp.open("GET", "bstorm.xml", true);
+	xhttp.open("GET", wheelSet, true);
 	xhttp.send(null);
-	
+
 	// Match display size
 	twgl.resizeCanvasToDisplaySize( gl.canvas );
 	gl.viewport(0, 0, canvas.width, canvas.height);
@@ -761,22 +766,22 @@ function bstorm_main()
 	glcanvas = canvas;
 
 	// Request texture resources
-	var backgroundImage = "imgs/bstorm_background.png";
-	var wheelMaskImage = "imgs/bstorm_wheelmask.png";
+	var backgroundImage = "/imgs/bstorm_background.png";
+	var wheelMaskImage = "/imgs/bstorm_wheelmask.png";
 
 
-	textures = twgl.createTextures( gl, 
+	textures = twgl.createTextures( gl,
 	{
 		// background : { src: "s/bstorm_background.png", min: gl.LINEAR_MIPMAP_LINEAR, },
 		// words :  { src:wordCanvas, min: gl.LINEAR_MIPMAP_LINEAR },
 		// wheelmask :  { src:"s/bstorm_wheelmask.png", min: gl.LINEAR_MIPMAP_LINEAR },
 
-		background : { src: backgroundImage, 
+		background : { src: backgroundImage,
 						crossOrigin: "",
 						min: gl.LINEAR_MIPMAP_LINEAR, },
 
 		// words :  { src:wordCanvas, min: gl.LINEAR_MIPMAP_LINEAR },
-		wheelmask :  { src: wheelMaskImage, 
+		wheelmask :  { src: wheelMaskImage,
 			min: gl.LINEAR_MIPMAP_LINEAR,
 			premultiplyAlpha: 1,
 			crossOrigin: "" },

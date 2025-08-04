@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="wheelset-list">
+  <header>
+    <h1>{{ .Title | default "All Wheels" }}</h1>
+    <p>Explore our collection of brainstorming wheels</p>
+  </header>
+
+  <div class="wheelset-grid">
+    {{ range .Pages }}
+      <article class="wheelset-card">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ if .Params.description }}
+          <p class="wheelset-description">{{ .Params.description }}</p>
+        {{ end }}
+        {{ if .Date }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="wheelset-link">View Wheel →</a>
+      </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

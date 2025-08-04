@@ -1,4 +1,16 @@
 {{ define "main" }}
 <h2>The Brainstormer</h2>
-<p>This is the main page</p>
+<h3>Featured Wheels</h3>
+<ul>
+{{ range where .Site.RegularPages "Type" "wheelset" }}
+  <li><a href="{{ .RelPermalink }}">
+      {{ .Title }}
+    </a>
+    {{ if .Params.description }}
+      <p>{{ .Params.description }}</p>
+    {{ end }}
+  </li>
+{{ end }}
+</ul>
+
 {{ end }}

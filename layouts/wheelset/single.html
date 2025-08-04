@@ -1,0 +1,60 @@
+{{ define "head"}}
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <script src="/js/twgl-full.js"></script>
+  <script src="/js/bstorm-wgl.js"></script>
+
+  <script>
+    //window.wheelSet = "/wheels/bstorm.xml";
+    window.wheelSet = {{ .Params.bstormXML }};
+    window.onload = () => {
+        bstorm_main( window.wheelSet );
+    }
+  </script>
+{{ end }}
+
+{{ define "main" }}
+<article class="wheelset-page">
+  <header>
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.description }}
+      <p class="wheelset-description">{{ .Params.description }}</p>
+    {{ end }}
+    <div class="wheelset-meta">
+      {{ if .Date }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ end }}
+    </div>
+  </header>
+
+<canvas id="bstorm_words" width="2048" height="2048" style="display:none"></canvas>
+
+  <main class="wheelset-content">
+    {{ .Content }}
+  </main>
+
+  <!-- Add wheelset-specific content here -->
+  <div class="wheelset-interactive">
+    <canvas id="glcanvas" width="800" height="800" style=""></canvas>
+          <div class="bs-wordbox">
+            <h2 class="bs-wordbox" id="bstorm_inner">Inner Word</h2> &bull;
+            <h2 class="bs-wordbox" id="bstorm_middle">Middle Word</h2> &bull;
+            <h2 class="bs-wordbox" id="bstorm_outer">Outer Word</h2>
+          </div>
+      </div>
+  </div>
+
+  <footer class="wheelset-footer">
+    <nav>
+      <a href="/">← Back to Home</a>
+      {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}">Next Wheel: {{ .Title }} →</a>
+      {{ end }}
+      {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}">← Previous Wheel: {{ .Title }}</a>
+      {{ end }}
+    </nav>
+  </footer>
+</article>
+{{ end }}

@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My site</title>
+    <title>The Brainstormer</title>
+    {{ block "head" . }} {{ end }}
   </head>
   <body>
     <nav>
       <a href="/">Home</a>
       <a href="/posts">Posts</a>
+      <a href="/wheelset">Wheelset</a>
       <a href="/tags">Tags</a>
     </nav>
     <p>this is the base template</p>
