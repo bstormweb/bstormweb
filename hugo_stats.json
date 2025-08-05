@@ -1,0 +1,52 @@
+{
+  "htmlElements": {
+    "tags": [
+      "a",
+      "article",
+      "body",
+      "canvas",
+      "div",
+      "footer",
+      "h1",
+      "h2",
+      "h3",
+      "head",
+      "header",
+      "html",
+      "li",
+      "main",
+      "meta",
+      "nav",
+      "p",
+      "script",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "bg-teal-500",
+      "bs-wordbox",
+      "font-bold",
+      "text-3xl",
+      "underline",
+      "wheelset-card",
+      "wheelset-content",
+      "wheelset-description",
+      "wheelset-footer",
+      "wheelset-grid",
+      "wheelset-interactive",
+      "wheelset-link",
+      "wheelset-list",
+      "wheelset-meta",
+      "wheelset-page"
+    ],
+    "ids": [
+      "bstorm_inner",
+      "bstorm_middle",
+      "bstorm_outer",
+      "bstorm_words",
+      "glcanvas",
+      "hello-world",
+      "my-first-post"
+    ]
+  }
+}

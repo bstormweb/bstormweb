@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Brainstormer</title>
     {{ block "head" . }} {{ end }}
+
+    {{ with (templates.Defer (dict "key" "global")) }}
+    {{ partial "css.html" . }}
+
+  {{ end }}
   </head>
   <body>
     <nav>
@@ -13,6 +18,9 @@
       <a href="/wheelset">Wheelset</a>
       <a href="/tags">Tags</a>
     </nav>
+     <h1 class="text-3xl font-bold underline bg-teal-500">
+    Hello world!
+    </h1>
     <p>this is the base template</p>
     {{ block "main" . }} {{ end }}
   </body>
