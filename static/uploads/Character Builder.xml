@@ -1,0 +1,353 @@
+<brainstormer>
+  <title>Character Builder</title>
+  <creator>Andrew Bosley</creator>
+  <desc>Mixes personalities, backgrounds and themes for an unending variety of compelling characters</desc>
+  <sku>com.tapnik.bstorm.wordset.chardev</sku>
+
+    <examples>
+        <example>The Self-made Man/Genius/Naturalist</example>
+        <example>The Hope Bringer/Feudal/Captain</example>
+        <example>The Gunslinger/Zealot/Bard</example>
+        <example>The Damsel/Liberated/Activist</example>
+        <example>The Evil Mentor/Soldier/Daredevil</example>
+    </examples>
+    
+  <wheel>
+    <word>The Invincible Hero</word>
+    <word>The Dumb Muscle</word>
+    <word>The Bully</word>
+    <word>The Scoundrel</word>
+    <word>The Good Samaritan</word>
+    <word>The Caretaker</word>
+    <word>The Damsel</word>
+    <word>The Dutiful Son</word>
+    <word>The Anti-Hero</word>
+    <word>The Mysterious Employer</word>
+    <word>The Evil Mentor</word>
+    <word>The Man Behind the Man</word>
+    <word>The Muse</word>
+    <word>The Puppet Master</word>
+    <word>The Unwitting Pawn</word>
+    <word>The Wide-eyed Idealist</word>
+    <word>The Knight Templar</word>
+    <word>The Corrupt Politician</word>
+    <word>The Fallen Hero</word>
+    <word>The Traitor</word>
+    <word>The Poisonous Friend</word>
+    <word>The Self-made Man</word>
+    <word>The Gunslinger</word>
+    <word>The King of the Mountain</word>
+    <word>The Chosen One</word>
+    <word>The Reckless</word>
+    <word>The Daredevil</word>
+    <word>The Outlaw</word>
+    <word>The Accidental Hero</word>
+    <word>The Hope Bringer</word>
+    <word>The Enforcer</word>
+  </wheel>
+  <wheel>
+    <word>Schizophrenic</word>
+    <word>Apprentice</word>
+    <word>Pyro</word>
+    <word>Acrophobic</word>
+    <word>Transdimensional</word>
+    <word>Gunky</word>
+    <word>Junkyard</word>
+    <word>Samaritan</word>
+    <word>Buddhist</word>
+    <word>Egyptian</word>
+    <word>Addicted</word>
+    <word>Alien</word>
+    <word>Lost</word>
+    <word>Ancient</word>
+    <word>Imprisoned</word>
+    <word>Aztec</word>
+    <word>Zulu</word>
+    <word>Fantasy</word>
+    <word>God-like</word>
+    <word>Dead</word>
+    <word>Undead</word>
+    <word>Prehistoric</word>
+    <word>Elite</word>
+    <word>Super-powered</word>
+    <word>Armed</word>
+    <word>Genius</word>
+    <word>Exiled</word>
+    <word>Zealot</word>
+    <word>Broken</word>
+    <word>Hunted</word>
+    <word>Animal</word>
+    <word>Criminal</word>
+    <word>Horror</word>
+    <word>Arctic</word>
+    <word>Soldier</word>
+    <word>Traveling</word>
+    <word>Tropical</word>
+    <word>Royal</word>
+    <word>Microscopic</word>
+    <word>Robot</word>
+    <word>Marooned</word>
+    <word>Diseased</word>
+    <word>Viking</word>
+    <word>Champion</word>
+    <word>Jurassic</word>
+    <word>Damned</word>
+    <word>Cloned</word>
+    <word>Trapped</word>
+    <word>Nomadic</word>
+    <word>Poor</word>
+    <word>Institutionalized</word>
+    <word>Mafia</word>
+    <word>Seafaring</word>
+    <word>Occult</word>
+    <word>Voodoo</word>
+    <word>Cannibal</word>
+    <word>Stranded</word>
+    <word>Giant</word>
+    <word>Lovesick</word>
+    <word>Betrayed</word>
+    <word>Kidnapped</word>
+    <word>Dying</word>
+    <word>Fairy</word>
+    <word>Chinese</word>
+    <word>Classical</word>
+    <word>Murdered</word>
+    <word>Poisoned</word>
+    <word>Hollywood</word>
+    <word>Feudal</word>
+    <word>Disguised</word>
+    <word>Tribal</word>
+    <word>Religious</word>
+    <word>Victorian</word>
+    <word>Pioneering</word>
+    <word>Saharan</word>
+    <word>Frozen</word>
+    <word>Kingly/Queenly</word>
+    <word>Amateur</word>
+    <word>Superhuman</word>
+    <word>Artistic</word>
+    <word>Refugee</word>
+    <word>Everyman</word>
+    <word>Indigenous</word>
+    <word>High-class</word>
+    <word>Middle-class</word>
+    <word>Wannabe</word>
+    <word>Underdog</word>
+    <word>Untouchable</word>
+    <word>Eastern</word>
+    <word>Western</word>
+    <word>Divided</word>
+    <word>Abandoned</word>
+    <word>Psychopathic</word>
+    <word>Hypnotized</word>
+    <word>Ph.D.'ed</word>
+    <word>Academic</word>
+    <word>Drunk</word>
+    <word>Orphaned</word>
+    <word>Victimized</word>
+    <word>Foreign</word>
+    <word>Toxic</word>
+    <word>Group of</word>
+    <word>Liberated</word>
+    <word>Survivor</word>
+    <word>Brainwashed</word>
+    <word>Cosmic</word>
+    <word>Forgotten</word>
+    <word>Elderly</word>
+    <word>Young</word>
+    <word>Multicultural</word>
+    <word>Manufactured</word>
+    <word>Immortal</word>
+    <word>Secret</word>
+    <word>Legendary</word>
+    <word>Time-traveling</word>
+    <word>Post-apocalyptic</word>
+    <word>Child</word>
+    <word>Big City</word>
+    <word>Rural</word>
+    <word>Gifted</word>
+  </wheel>
+    
+  <wheel>
+    <word>Clone</word>
+    <word>Dwarf</word>
+    <word>Giant</word>
+    <word>Accountant</word>
+    <word>Acrobat</word>
+    <word>Astronaut</word>
+    <word>Engineer</word>
+    <word>Ambassador</word>
+    <word>Apprentice</word>
+    <word>Archaeologist</word>
+    <word>Architect</word>
+    <word>Anarchist</word>
+    <word>Activist</word>
+    <word>Artist</word>
+    <word>Lawyer</word>
+    <word>Chimney Sweep</word>
+    <word>Writer</word>
+    <word>Brewer</word>
+    <word>Inventor</word>
+    <word>Barber</word>
+    <word>Blacksmith</word>
+    <word>Fairy</word>
+    <word>Elemental</word>
+    <word>Musician</word>
+    <word>Bard</word>
+    <word>Storyteller</word>
+    <word>Trader</word>
+    <word>Explorer</word>
+    <word>Thief</word>
+    <word>Alien</word>
+    <word>God</word>
+    <word>Tailor</word>
+    <word>Shoemaker</word>
+    <word>Security</word>
+    <word>Guard</word>
+    <word>Sailor</word>
+    <word>Medic</word>
+    <word>Historian</word>
+    <word>Necromancer</word>
+    <word>Dragon</word>
+    <word>Dragon slayer</word>
+    <word>Alchemist</word>
+    <word>Ranger</word>
+    <word>Wizard</word>
+    <word>Soothsayer</word>
+    <word>Prophet</word>
+    <word>Bridesmaid</word>
+    <word>Bride</word>
+    <word>Space Marine</word>
+    <word>Abomination</word>
+    <word>Nymph</word>
+    <word>Guard</word>
+    <word>Knight</word>
+    <word>Squire</word>
+    <word>Consultant</word>
+    <word>Pioneer</word>
+    <word>Adventurer</word>
+    <word>Mutant</word>
+    <word>Admiral</word>
+    <word>Hiker</word>
+    <word>Traveler</word>
+    <word>Hoarder</word>
+    <word>Translator</word>
+    <word>Devil</word>
+    <word>Demon</word>
+    <word>Ghost</word>
+    <word>Liberator</word>
+    <word>Priest</word>
+    <word>Pirate</word>
+    <word>Ancestor</word>
+    <word>Helmsman</word>
+    <word>Captain</word>
+    <word>Longshoreman</word>
+    <word>Father</word>
+    <word>Mother</word>
+    <word>Heir</word>
+    <word>Matriarch</word>
+    <word>Patriarch</word>
+    <word>Elder</word>
+    <word>Gunner</word>
+    <word>Secretary</word>
+    <word>Elf</word>
+    <word>Sprite</word>
+    <word>King</word>
+    <word>Queen</word>
+    <word>Bachelor</word>
+    <word>Widow</word>
+    <word>Street Urchin</word>
+    <word>Vagabond</word>
+    <word>Judge</word>
+    <word>Citizen</word>
+    <word>Senator</word>
+    <word>Puppeteer</word>
+    <word>President</word>
+    <word>Prime Minister</word>
+    <word>Executioner</word>
+    <word>Bandit</word>
+    <word>Bureaucrat</word>
+    <word>Emperor</word>
+    <word>Mayor</word>
+    <word>Tyrant</word>
+    <word>Warlord</word>
+    <word>Private</word>
+    <word>Mob boss</word>
+    <word>Baker</word>
+    <word>Babysitter</word>
+    <word>Dancer</word>
+    <word>Businessman</word>
+    <word>Roughneck</word>
+    <word>Bookkeeper</word>
+    <word>Salesman</word>
+    <word>Chef</word>
+    <word>Executive</word>
+    <word>Evangelist</word>
+    <word>Conman</word>
+    <word>Clockmaker</word>
+    <word>Tinker</word>
+    <word>Farmer</word>
+    <word>Fireman</word>
+    <word>Doctor</word>
+    <word>Witch</word>
+    <word>Gladiator</word>
+    <word>Spy</word>
+    <word>Mechanic</word>
+    <word>Philosopher</word>
+    <word>Peasant</word>
+    <word>Mad Scientist</word>
+    <word>Ninja</word>
+    <word>Samurai</word>
+    <word>Smuggler</word>
+    <word>Archer</word>
+    <word>Superhero</word>
+    <word>Spokesman</word>
+    <word>King's Advisor</word>
+    <word>Overseer</word>
+    <word>Miner</word>
+    <word>Pilot</word>
+    <word>Caveman</word>
+    <word>Native</word>
+    <word>Climber</word>
+    <word>Lunatic</word>
+    <word>Professor</word>
+    <word>Warrior</word>
+    <word>Elite Soldier</word>
+    <word>Celebrity</word>
+    <word>Child</word>
+    <word>Builder</word>
+    <word>Student</word>
+    <word>Athlete</word>
+    <word>Geek</word>
+    <word>Sensei</word>
+    <word>Banker</word>
+    <word>Waiter</word>
+    <word>Hit man</word>
+    <word>Genius</word>
+    <word>Cowboy</word>
+    <word>Sultan</word>
+    <word>Revolutionary</word>
+    <word>Pilgrim Rebel</word>
+    <word>Merchant</word>
+    <word>Gardener</word>
+    <word>Tycoon</word>
+    <word>Militia Man</word>
+    <word>Entrepreneur</word>
+    <word>Terrorist</word>
+    <word>Monk</word>
+    <word>Hermit</word>
+    <word>Prisoner</word>
+    <word>Bounty Hunter</word>
+    <word>Hunter</word>
+    <word>Settler</word>
+    <word>Champion</word>
+    <word>Slick Willie</word>
+    <word>Naturalist</word>
+    <word>Clown</word>
+    <word>Daredevil</word>
+    <word>Master of Ceremonies</word>
+    <word>Barnstormer</word>
+    <word>Village Idiot</word>
+    <word>Survivalist</word>
+  </wheel>
+</brainstormer>

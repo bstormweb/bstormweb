@@ -11,17 +11,16 @@
 
   {{ end }}
   </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/posts">Posts</a>
-      <a href="/wheelset">Wheelset</a>
-      <a href="/tags">Tags</a>
-    </nav>
-     <h1 class="text-3xl font-bold underline bg-teal-500">
-    Hello world!
-    </h1>
-    <p>this is the base template</p>
-    {{ block "main" . }} {{ end }}
+    <div class="bg-bstorm border-x-8 border-bstorm-white min-h-screen mx-auto sm:max-w-2xl">
+      <div class="border-b-4 border-bstorm-black">
+        <nav class="bg-bstorm-bright border-b-4 border-bstorm-white flex gap-6 px-10">
+          <a href="/">Home</a>
+          <a href="/posts">Posts</a>
+          <a href="/wheelset">Wheelset</a>
+          <a href="/tags">Tags</a>
+        </nav>
+      </div>
+      {{ block "main" . }} {{ end }}
+    </div>
   </body>
 </html>

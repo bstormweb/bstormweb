@@ -17,7 +17,7 @@
 {{ define "main" }}
 <article class="wheelset-page">
   <header>
-    <h1>{{ .Title }}</h1>
+    <h1 class="text-2xl text-center">{{ .Title }}</h1>
     {{ if .Params.description }}
       <p class="wheelset-description">{{ .Params.description }}</p>
     {{ end }}
@@ -35,26 +35,15 @@
   </main>
 
   <!-- Add wheelset-specific content here -->
-  <div class="wheelset-interactive">
-    <canvas id="glcanvas" width="800" height="800" style=""></canvas>
-          <div class="bs-wordbox">
-            <h2 class="bs-wordbox" id="bstorm_inner">Inner Word</h2> &bull;
-            <h2 class="bs-wordbox" id="bstorm_middle">Middle Word</h2> &bull;
-            <h2 class="bs-wordbox" id="bstorm_outer">Outer Word</h2>
-          </div>
+  <div class="wheelset-interactive w-full">
+    <canvas id="glcanvas" class="w-full aspect-square bg-black max-w-2xl mx-auto"></canvas>
+        <div class="bs-wordbox flex justify-center">
+          <h2 class="bs-wordbox" id="bstorm_inner">Inner Word</h2> &bull;
+          <h2 class="bs-wordbox" id="bstorm_middle">Middle Word</h2> &bull;
+          <h2 class="bs-wordbox" id="bstorm_outer">Outer Word</h2>
+        </div>
       </div>
   </div>
 
-  <footer class="wheelset-footer">
-    <nav>
-      <a href="/">← Back to Home</a>
-      {{ with .NextInSection }}
-        <a href="{{ .RelPermalink }}">Next Wheel: {{ .Title }} →</a>
-      {{ end }}
-      {{ with .PrevInSection }}
-        <a href="{{ .RelPermalink }}">← Previous Wheel: {{ .Title }}</a>
-      {{ end }}
-    </nav>
-  </footer>
 </article>
 {{ end }}

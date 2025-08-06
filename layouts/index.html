@@ -1,16 +1,38 @@
 {{ define "main" }}
-<h2>The Brainstormer</h2>
-<h3>Featured Wheels</h3>
-<ul>
-{{ range where .Site.RegularPages "Type" "wheelset" }}
-  <li><a href="{{ .RelPermalink }}">
-      {{ .Title }}
+<h1 class="text-center min-h-10 p-8 text-3xl border-b-4">The Brainstormer</h1>
+<div class="px-8 mb-10">
+<h3 class="text-xl mx-10 mb-6">Featured Wheels</h3>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mx-10">
+  {{ range where .Site.RegularPages "Type" "wheelset" }}
+
+    <a href="{{ .RelPermalink }}"
+    class="block p-4 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition-colors">
+
+    <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+      {{ .Title }}</h5>
+      {{ if .Params.description }}
+      <p class="text-sm font-normal text-gray-700 dark:text-gray-400">
+        {{ .Params.description }}
+      </p>
+      {{ end }}
     </a>
-    {{ if .Params.description }}
-      <p>{{ .Params.description }}</p>
-    {{ end }}
-  </li>
-{{ end }}
-</ul>
+
+  {{ end }}
+</div>
+
+</div>
+<div class="border-t-4 px-8">
+  <h3 class="text-xl mx-10 mt-5">News and Notes</h3>
+
+  <ul>
+  {{ range where .Site.RegularPages "Type" "posts" }}
+    <li><a href="{{ .RelPermalink }}">
+        <a href="{{ .RelPermalink }}" class="text-l">{{ .Title }}</a>
+      </a></li>
+  {{ end }}
+  </ul>
+</div>
+
 
 {{ end }}
