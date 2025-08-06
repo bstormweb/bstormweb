@@ -1,0 +1,60 @@
+<brainstormer>
+  <title>Great Works Remixed</title>
+  <creator>Joel Davis</creator>
+  <desc>The great works of literature, chopped up and scrambled.</desc>
+  <sku free="YES">com.tapnik.bstorm.wordset.greatworks</sku>    
+  <wheel>
+        <word>Whaling Voyage</word> 
+        <word>Murdered King</word>
+        <word>Arranged Marriage</word>
+        <word>Transformed into Insect</word>
+        <word>Star Crossed Lovers</word>
+        <word>Returning from War</word>
+        <word>Tricked by a Moneylender</word>
+        <word>Pilgrimage to Canterbury</word>
+        <word>Mistaken Identity</word>
+        <word>Wooing a Stubborn Lady</word>
+        <word>Interfering Fairies</word>        
+        <word>The Fall of Man</word>
+        <word>Deal with the Devil</word>
+        <word>Murder of Landlady</word>
+        <word>Best Possible World</word>
+        <word>River Journey</word>
+        <word>Visited by Spirits</word>        
+  </wheel>
+ 
+  <wheel>
+        <word>Roman</word>
+        <word>Victorian</word>
+        <word>Elizabethan</word>
+        <word>The Mississippi River</word>
+        <word>The Garden of Eden</word>        
+        <word>Hell</word>
+        <word>The Inquisition</word>
+        <word>Bildungsroman</word>
+        <word>The Jazz Age</word>        
+  </wheel>
+
+  <wheel>
+        <word>Elsinor Castle</word>
+        <word>Orphanage</word>
+        <word>Yellow Wood</word>
+        <word>Siberia</word>
+        <word>Magical Island</word>
+        <word>Venice</word>
+        <word>Verona</word>
+        <word>London</word>
+        <word>Spain</word>
+        <word>Troy</word>
+        <word>Vivid Dream</word>
+        <word>Shipwreck</word>
+        <word>Raft</word>
+        <word>Seagull</word>
+        <word>Albatross</word>
+        <word>Shantih, Shantih</word>
+        <word>Bootleggers</word>
+        <word>Matador</word>
+        <word>Heartbeat</word>
+        <word>Salesman</word>
+  </wheel>
+</brainstormer>

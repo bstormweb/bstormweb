@@ -1,0 +1,363 @@
+<brainstormer>
+  <title>World Builder</title>
+  <creator>Andrew Bosley</creator>
+  <desc>Combine theme, mood and place to create unique and unexpected locations</desc>
+  <sku>com.tapnik.bstorm.wordset.worlds</sku>
+    
+  <examples>
+      <example>Galactic/Radioactive/Catacombs</example>
+      <example>Feudal Japan/Isolated/Pub</example>
+      <example>Rennassaince/Enchanted/Apartment building</example>
+      <example>Greek/Empty/Treehouse</example>
+      <example>Steampunk/Towering/Bungalow</example>
+      <example>Amazon/Silent/Fueling station</example>
+  </examples>
+    
+  <wheel>  
+    <word>Present Day</word>
+    <word>Near Future</word>
+    <word>Golden Age</word>
+    <word>Steampunk</word>
+    <word>Nazi</word>
+    <word>Viking</word>
+    <word>Arthurian</word>
+    <word>Greek</word>
+    <word>Prehistoric</word>
+    <word>Trandimensional</word>
+    <word>Retro</word>
+    <word>Distant Future</word>
+    <word>Galactic</word>
+    <word>Amazon</word>
+    <word>Orwellian</word>
+    <word>Post-apocalyptic</word>
+    <word>Victorian</word>
+    <word>Industrial Revolution</word>
+    <word>American Revolution </word>
+    <word>Great Depression </word>
+    <word>Feudal Japan</word>
+    <word>Dark Ages</word>
+    <word>Renaissance</word>
+    <word>Martian</word>
+    <word>Wild West</word>
+    <word>Noir</word>
+    <word>Aztec</word>
+    <word>Byzantine</word>
+    <word>Gilded age</word>
+    <word>Atlantean</word>
+    <word>Biblical</word>
+    <word>Sub-Saharan</word>
+    <word>Jurassic</word>
+    <word>Arabian</word>
+    <word>Tim Burton-esque</word>
+    <word>Roaring 20's</word>
+    <word>Transylvanian</word>
+    <word>Animal Kingdom</word>
+    <word>Invaded Earth</word>
+    <word>Dreamland</word>
+    <word>Fairytale</word>
+    <word>Lovecraft-esque</word>
+    <word>Supernatural</word>
+    <word>Garden of Eden</word>
+    <word>Space Western</word>
+  </wheel>
+ 
+  <wheel>
+    <word>Besieged</word>
+    <word>Abandoned</word>
+    <word>Demolished</word>
+    <word>Steel</word>
+    <word>Isolated</word>
+    <word>Overcrowded</word>
+    <word>Overturned</word>
+    <word>Upheaval</word>
+    <word>Quarantined</word>
+    <word>Bombarded</word>
+    <word>Dank</word>
+    <word>Bustling</word>
+    <word>Thriving</word>
+    <word>Overgrown</word>
+    <word>Decaying</word>
+    <word>Restored</word>
+    <word>Renovated</word>
+    <word>Rundown</word>
+    <word>Weathered</word>
+    <word>Mythical</word>
+    <word>Forgotten</word>
+    <word>Lost</word>
+    <word>Wild</word>
+    <word>Spacious</word>
+    <word>Makeshift</word>
+    <word>Tropical</word>
+    <word>Frozen</word>
+    <word>Arid</word>
+    <word>Foreign</word>
+    <word>Exotic</word>
+    <word>Bohemian</word>
+    <word>Temporary</word>
+    <word>Elevated </word>
+    <word>Hellish</word>
+    <word>Regal</word>
+    <word>Unfinished</word>
+    <word>Radioactive</word>
+    <word>Sprawling</word>
+    <word>Sunken</word>
+    <word>Cavernous</word>
+    <word>Lush</word>
+    <word>Industrial</word>
+    <word>Imaginary</word>
+    <word>Vintage</word>
+    <word>Underground</word>
+    <word>Miniature</word>
+    <word>Unstable</word>
+    <word>Impoverished</word>
+    <word>Towering</word>
+    <word>Impenetrable</word>
+    <word>Haunted</word>
+    <word>Flying</word>
+    <word>Floating</word>
+    <word>Ransacked</word>
+    <word>Burning</word>
+    <word>Illuminated</word>
+    <word>Mechanical</word>
+    <word>Ancient</word>
+    <word>Flooded</word>
+    <word>Scorched</word>
+    <word>Melting</word>
+    <word>Mountainous</word>
+    <word>Hidden</word>
+    <word>Empty</word>
+    <word>Silent</word>
+    <word>Magical</word>
+    <word>Enchanted</word>
+    <word>Dirty</word>
+    <word>Shiny</word>
+    <word>Collapsing</word>
+    <word>Decorated</word>
+    <word>Stripped</word>
+    <word>Giant</word>
+    <word>Militaristic</word>
+    <word>Patriotic</word>
+    <word>Organic</word>
+    <word>Geometric</word>
+    <word>Peaceful</word>
+    <word>Dangerous</word>
+    <word>Flowery</word>
+    <word>Foggy</word>
+    <word>Red</word>
+    <word>Green</word>
+    <word>Black</word>
+    <word>White</word>
+    <word>Blasted</word>
+    <word>Dark</word>
+    <word>Celestial</word>
+    <word>Distant</word>
+    <word>Alien</word>
+    <word>Corporate</word>
+    <word>Underwater</word>
+    <word>Picturesque</word>
+    <word>Urban</word>
+    <word>Fragile</word>
+    <word>Holy</word>
+    <word>Lawless</word>
+    <word>Grey</word>
+    <word>Moving</word>
+    <word>Crystalline</word>
+    <word>Infested</word>
+    <word>Placid</word>
+    <word>Polluted</word>
+    <word>Counterfeit</word>
+    <word>Dormant</word>
+    <word>Ornate</word>
+    <word>Macabre</word>
+    <word>Leprous</word>
+    <word>Suburban</word>
+    <word>Uncharted</word>
+    <word>Stormy</word>
+    <word>Nautical</word>
+    <word>Duel</word>
+    <word>Rural</word>
+  </wheel>
+
+  <wheel>
+    <word>Castle</word>
+    <word>Prison</word>
+    <word>Mansion</word>
+    <word>Dungeon</word>
+    <word>Observatory</word>
+    <word>Highway</word>
+    <word>Zoo</word>
+    <word>Mountain</word>
+    <word>Hut</word>
+    <word>Township</word>
+    <word>Refugee camp</word>
+    <word>Church</word>
+    <word>Cathedral</word>
+    <word>Interrogation Room</word>
+    <word>Outpost</word>
+    <word>Fortress</word>
+    <word>War Room</word>
+    <word>Bunker</word>
+    <word>Skyscraper</word>
+    <word>City</word>
+    <word>Village</word>
+    <word>Ghetto</word>
+    <word>Labyrinth</word>
+    <word>Seat of the Gods</word>
+    <word>Bungalow</word>
+    <word>Temple</word>
+    <word>Utopia</word>
+    <word>Dystopia</word>
+    <word>Undiscovered Land</word>
+    <word>Pirate's Trove</word>
+    <word>Cemetery</word>
+    <word>Concentration Camp</word>
+    <word>Garden</word>
+    <word>Wildlife Preserve</word>
+    <word>Wilderness</word>
+    <word>Lair</word>
+    <word>Library</word>
+    <word>Capital</word>
+    <word>Courthouse</word>
+    <word>Ship</word>
+    <word>Island</word>
+    <word>Forest</word>
+    <word>Desert</word>
+    <word>Waterfall</word>
+    <word>Oasis</word>
+    <word>Laboratory</word>
+    <word>Factory</word>
+    <word>Faraway Galaxy</word>
+    <word>Ruins</word>
+    <word>School</word>
+    <word>University</word>
+    <word>Museum</word>
+    <word>Armory</word>
+    <word>Pub</word>
+    <word>Gallery</word>
+    <word>Moon</word>
+    <word>Star</word>
+    <word>Capitol</word>
+    <word>Bank</word>
+    <word>Mint</word>
+    <word>Academy</word>
+    <word>Planet</word>
+    <word>Basement</word>
+    <word>Shipyard</word>
+    <word>Dock</word>
+    <word>Research Facility</word>
+    <word>Conference Center</word>
+    <word>Arena</word>
+    <word>Historical Site</word>
+    <word>Catacombs</word>
+    <word>Train</word>
+    <word>Shipping Port</word>
+    <word>Resort</word>
+    <word>Hotel</word>
+    <word>Motel</word>
+    <word>Mental Hospital</word>
+    <word>Tower</word>
+    <word>Bridge</word>
+    <word>Throne Room</word>
+    <word>Kitchen</word>
+    <word>Military base</word>
+    <word>Bakery</word>
+    <word>Mechanic's Shop</word>
+    <word>Airport</word>
+    <word>Powerplant</word>
+    <word>Amusement Park</word>
+    <word>Fueling Station</word>
+    <word>Jungle</word>
+    <word>Volcano</word>
+    <word>Lighthouse</word>
+    <word>Windmill</word>
+    <word>Cesspool</word>
+    <word>Quagmire</word>
+    <word>Aquaduct</word>
+    <word>Drawbridge</word>
+    <word>Submarine</word>
+    <word>Orchard</word>
+    <word>Attic</word>
+    <word>Ballroom</word>
+    <word>Tomb</word>
+    <word>Workshop</word>
+    <word>Nest</word>
+    <word>Hangar</word>
+    <word>Cave</word>
+    <word>Palace</word>
+    <word>City Walls</word>
+    <word>Inn</word>
+    <word>Trailer</word>
+    <word>Mine</word>
+    <word>Party</word>
+    <word>Streets</word>
+    <word>Monument</word>
+    <word>Beach</word>
+    <word>Sewers</word>
+    <word>Tourist Trap</word>
+    <word>Headquarters</word>
+    <word>Subway</word>
+    <word>Swamp</word>
+    <word>Caravan</word>
+    <word>Expedition</word>
+    <word>Tradeshow</word>
+    <word>Train station</word>
+    <word>Landfill</word>
+    <word>Junkyard</word>
+    <word>Silo</word>
+    <word>Arcade</word>
+    <word>Office</word>
+    <word>Monastery</word>
+    <word>Cafe</word>
+    <word>Stable</word>
+    <word>Cargo Bay</word>
+    <word>Diner</word>
+    <word>Restaurant</word>
+    <word>Archive Room</word>
+    <word>Hospital</word>
+    <word>Newsroom</word>
+    <word>Canyon</word>
+    <word>Wasteland</word>
+    <word>Dojo</word>
+    <word>Tower</word>
+    <word>Burial Site</word>
+    <word>Treasure room</word>
+    <word>Canal</word>
+    <word>Harbor</word>
+    <word>Studio</word>
+    <word>Bus Stop</word>
+    <word>Sky</word>
+    <word>Warehouse</word>
+    <word>Parking Lot</word>
+    <word>Empty Lot</word>
+    <word>Cellar</word>
+    <word>Gym</word>
+    <word>Abyss</word>
+    <word>Field</word>
+    <word>Aquarium</word>
+    <word>Iceberg</word>
+    <word>Alley</word>
+    <word>Bookshop</word>
+    <word>Portal</word>
+    <word>Tunnel</word>
+    <word>Void</word>
+    <word>Pool</word>
+    <word>Road</word>
+    <word>Treehouse</word>
+    <word>Colony </word>
+    <word>Wall</word>
+    <word>Closet</word>
+    <word>Pit</word>
+    <word>Backyard</word>
+    <word>Neighborhood</word>
+    <word>Heaven</word>
+    <word>Hell</word>
+    <word>Park</word>
+    <word>Battlefield</word>
+    <word>Apartment Building</word>
+    <word>Cliff</word>
+    <word>Machine Room</word>
+    <word>Garage</word>
+    <word>Plantation</word>
+    <word>Crater</word>
+  </wheel>
+</brainstormer>

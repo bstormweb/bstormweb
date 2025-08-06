@@ -1,0 +1,369 @@
+<brainstormer>
+  <title>Sci-Fi Brainstormer</title>
+  <creator>Joel Davis</creator>
+  <desc>A Brainstormer with a Science Fiction Flavor</desc>
+  <sku>com.tapnik.bstorm.wordset.scifi</sku>
+    
+   <examples>
+        <example>First Contact/Cornfield/Lost Girl</example>
+        <example>Time Loop/Antarctica/Machine Mind</example>
+        <example>Childless Society/Boiler Room/Reflection</example>
+        <example>Unending War/Rocket Platform/Beacon</example>
+        <example>Ritual of Passage/Steampunk/Cipher Key</example>
+        
+    </examples> 
+
+  <wheel>
+        <word>Time Loop</word>
+        <word>Cloning</word>
+        <word>Simulated Existance</word>
+        <word>Delivery Mission</word>
+        <word>Rescue of Kidnapped</word>
+        <word>Parallel Reality</word>
+        <word>Planetary Exodus</word>
+        <word>First Contact</word>
+        <word>Unending War</word>
+        <word>Personality Transplant</word>
+        <word>Downloaded Mind</word>
+        <word>Self-Aware AI</word>
+        <word>Sublime Intellegence</word>
+        <word>Fragmented Timeline</word>
+        <word>Stranded</word>
+        <word>Nonhuman Conciousness</word>
+        <word>Mind Control</word>
+        <word>Apocalypse</word>
+        <word>Doomsday Invention</word>
+        <word>Synthetic Memories</word>
+        <word>Technological Aparthied</word>
+        <word>Unexpected Consequences</word>
+        <word>Bio-Engineering</word>
+        <word>Simulation</word>
+        <word>Mental Instability</word>
+        <word>Cheating Death</word>
+        <word>Precursor Artifact</word>
+        <word>Doppleganger</word>
+        <word>Exhausted Resource</word>
+        <word>Mass Extinction</word>
+        <word>Imprisoned</word>
+        <word>Hunting of People</word>
+        <word>Reality Show</word>
+        <word>Planetary Exodus</word>
+        <word>Missing Person</word>
+        <word>Wormhole</word>
+        <word>Future Earth</word>
+        <word>Repressive Utopia</word>
+        <word>Survivors of Apocalypse</word>
+        <word>Surveillance State</word>
+        <word>Nanotech Disaster</word>
+        <word>Android Lover</word>
+        <word>Ecological Catastrophe</word>
+        <word>Ritual of Passage</word>    
+        <word>Childless Society</word>        
+  </wheel>
+ 
+  <wheel>
+    <word>Desert</word>
+    <word>Cavern</word>
+    <word>Present-Day</word>
+    <word>Wasteland</word>
+    <word>Lost World</word>
+    <word>Offworld Colonies</word>
+    <word>Cryogenics</word>
+    <word>Demilitarized Zone</word>
+    <word>Arctic Lab</word>
+    <word>Construction Site</word>
+    <word>Museum</word>
+    <word>Airship</word>
+    <word>Boiler Room</word>
+    <word>Quarry</word>
+    <word>Academy</word>
+    <word>Crime Lab</word>
+    <word>Outer Rim</word>
+    <word>Satellite</word>
+    <word>Event Horizon</word>
+    <word>Power Station</word>
+    <word>Rocket Platform</word>
+    <word>Wormhole</word>
+    <word>Animal</word>
+    <word>Dystopia</word>
+    <word>Island</word>
+    <word>Veldt</word>
+    <word>Mountaintop</word>
+    <word>Orbiting Junkyard</word>
+    <word>Orbital Platform</word>
+    <word>Prehistory</word>
+    <word>Juxtaposition</word>
+    <word>Teleporter</word>
+    <word>Singularity</word>
+    <word>Minefield</word>
+    <word>Subspace</word>
+    <word>Submersible</word>
+    <word>Hyperloop Transport</word>
+    <word>Sewer</word>
+    <word>Server Room</word>
+    <word>Ghetto</word>
+    <word>Deep Space</word>
+    <word>Ritual of Passage</word>
+    <word>Mineshaft</word>
+    <word>Catacomb</word>
+    <word>Ice Planet</word>
+    <word>Trading Post</word>
+    <word>Black Hole</word>
+    <word>Bio-Dome</word>
+    <word>Garden</word>
+    <word>Factory</word>
+    <word>Cloud City</word>
+    <word>Laboratory</word>
+    <word>Utopian City</word>
+    <word>Suburbia</word>
+    <word>Library</word>
+    <word>Farm</word>
+    <word>Lake</word>
+    <word>Unstable Border</word>
+    <word>Swamp</word>
+    <word>Barracks</word>
+    <word>High School</word>
+    <word>Headquarters</word>
+    <word>Alt. Timeline</word>
+    <word>Starship</word>
+    <word>Hollow Earth</word>
+    <word>Maze</word>
+    <word>Research Vessel</word>
+    <word>Arcology</word>
+    <word>Archives</word>
+    <word>Military Base</word>
+    <word>Surveillance</word>
+    <word>Sailboat</word>
+    <word>Urban</word>
+    <word>Slave</word>
+    <word>Reconstruction</word>
+    <word>Steampunk</word>
+    <word>Machine Nest</word>
+    <word>Subway</word>
+    <word>Fallout Shelter</word>
+    <word>War Zone</word>
+    <word>Submarine</word>
+    <word>Synthetic</word>
+    <word>Nebula</word>
+    <word>Warship</word>
+    <word>Labyrinth</word>
+    <word>Asteroid</word>
+    <word>Jupiter</word>
+    <word>Space Station</word>
+    <word>Remote Viewing</word>
+    <word>Industrial Age</word>
+    <word>Palace</word>
+    <word>Moon</word>
+    <word>Toxic Waste Dump</word>
+    <word>Mars</word>
+    <word>Refugee Camp</word>
+    <word>Ocean</word>
+    <word>Internet</word>
+    <word>Mining Colony</word>
+    <word>Post-War</word>
+    <word>Nuclear</word>
+    <word>Ocean Liner</word>
+    <word>Walled City</word>
+    <word>Basement</word>
+    <word>Prison</word>
+    <word>Salvage Yard</word>
+    <word>Operating Room</word>
+    <word>Exoplanet</word>
+    <word>Alien</word>
+    <word>Reactor</word>
+    <word>Deep Ocean</word>
+    <word>Hollow World</word>
+    <word>Rift</word>
+    <word>Bunker</word>
+    <word>Cyberspace</word>
+    <word>Forbidden City</word>
+    <word>Cornfield</word>
+    <word>Trainyard</word>
+    <word>Antarctica</word>
+    <word>Virtual Reality</word>
+    <word>Offword Colonies</word>    
+  </wheel>
+
+  <wheel>
+           <word>Extinct</word>
+    <word>Recording</word>
+    <word>Mercury</word>
+    <word>Water</word>
+    <word>Lost Girl</word>
+    <word>Beacon</word>
+    <word>Nootropic</word>
+    <word>Nanotech</word>
+    <word>Tentacle</word>
+    <word>Solar Flare</word>
+    <word>Encryption Key</word>
+    <word>Watcher</word>
+    <word>Biome</word>
+    <word>Wanderer</word>
+    <word>Circuit</word>
+    <word>Camera</word>
+    <word>Trader</word>
+    <word>Hacker</word>
+    <word>Fire</word>
+    <word>Spore</word>
+    <word>Silicon</word>
+    <word>University</word>
+    <word>Dagger</word>
+    <word>Quarantine</word>
+    <word>Hatchet</word>
+    <word>Stasis Pod</word>
+    <word>Telekinesis</word>
+    <word>Surge</word>
+    <word>Radiation</word>
+    <word>Rowboat</word>
+    <word>Poison</word>
+    <word>Prediction</word>
+    <word>Echo</word>
+    <word>Riverboat</word>
+    <word>Wedding</word>
+    <word>Reflection</word>
+    <word>Standing Stone</word>
+    <word>Child</word>
+    <word>Spyware</word>
+    <word>Researcher</word>
+    <word>Machine Mind</word>
+    <word>Cipher Key</word>
+    <word>Paranoia</word>
+    <word>Unhuman</word>
+    <word>Gladiator</word>
+    <word>Ice</word>
+    <word>Monk</word>
+    <word>Pressure</word>
+    <word>Satellite</word>
+    <word>Healer</word>
+    <word>Genetics</word>
+    <word>Safe</word>
+    <word>Void</word>
+    <word>Fossil</word>
+    <word>Algae</word>
+    <word>Artifact</word>
+    <word>Hallucination</word>
+    <word>Eclipse</word>
+    <word>Wall</word>
+    <word>Instruction</word>
+    <word>Husband</word>
+    <word>Salt</word>
+    <word>Toaster</word>
+    <word>Data Mining</word>
+    <word>Lightning</word>
+    <word>Cataclysm</word>
+    <word>Voyage</word>
+    <word>Dreams</word>
+    <word>Messenger</word>
+    <word>Gunpowder</word>
+    <word>Data Glitch</word>
+    <word>Synthesizer</word>
+    <word>Core Breach</word>
+    <word>Symbol</word>
+    <word>Wife</word>
+    <word>Surgery</word>
+    <word>Silo</word>
+    <word>Dashcam</word>
+    <word>Video Game</word>
+    <word>Animal</word>
+    <word>Pirate</word>
+    <word>Microcosm</word>
+    <word>Smuggler</word>
+    <word>X-Ray</word>
+    <word>Checksum</word>
+    <word>Cabin</word>
+    <word>Zombie</word>
+    <word>Cult</word>
+    <word>Pregnancy</word>
+    <word>Laser</word>
+    <word>Computer</word>
+    <word>Elevator</word>
+    <word>Electricity</word>
+    <word>Star</word>
+    <word>Shape</word>
+    <word>Ancestor</word>
+    <word>Blood</word>
+    <word>Vibration</word>
+    <word>Oxygen</word>
+    <word>Police</word>
+    <word>Thumbprint</word>
+    <word>Vegetation</word>
+    <word>Hive</word>
+    <word>Virtual Pet</word>
+    <word>Solid Printer</word>
+    <word>Breaker</word>
+    <word>Cybercafe</word>
+    <word>Virus</word>
+    <word>Whale</word>
+    <word>Hypnosis</word>
+    <word>Mobile Phone</word>
+    <word>Twins</word>
+    <word>Hull Breach</word>
+    <word>Incubator</word>
+    <word>Core Memory</word>
+    <word>Cyborg</word>
+    <word>Programmer</word>
+    <word>Scanner</word>
+    <word>Song</word>
+    <word>Cyclone</word>
+    <word>Outcast</word>
+    <word>Blackout</word>
+    <word>Mechanic</word>
+    <word>DNA</word>
+    <word>Escape Pod</word>
+    <word>Android</word>
+    <word>Anomaly</word>
+    <word>Shadow</word>
+    <word>Invisibility</word>
+    <word>Sandworm</word>
+    <word>Lockbox</word>
+    <word>Uranium</word>
+    <word>Concubine</word>
+    <word>Slave</word>
+    <word>Clone</word>
+    <word>Vision</word>
+    <word>Tumor</word>
+    <word>Prank</word>
+    <word>Repeating</word>
+    <word>Rifle</word>
+    <word>Cyclotron</word>
+    <word>Download</word>
+    <word>Hybrid</word>
+    <word>Skeleton</word>
+    <word>Wetware</word>
+    <word>Grey Goo</word>
+    <word>Bitcoin</word>
+    <word>Flare</word>
+    <word>Injection</word>
+    <word>Spice</word>
+    <word>Chimera</word>
+    <word>Memories</word>
+    <word>Tracker</word>
+    <word>Spearman</word>
+    <word>Nuclear</word>
+    <word>Tesla Coil</word>
+    <word>Soldier</word>
+    <word>Gold</word>
+    <word>Doctor</word>
+    <word>Hunter</word>
+    <word>Exoplanet</word>
+    <word>Neon</word>
+    <word>Alien</word>
+    <word>Plasma</word>
+    <word>Lightspeed</word>
+    <word>Warning</word>
+    <word>Magnetism</word>
+    <word>Narwhal</word>
+    <word>Rebel</word>
+    <word>Ash</word>
+    <word>Locker</word>
+    <word>Teleporter</word>
+    <word>Portal</word>
+    <word>Smart Gun</word>
+    <word>Hologram</word>
+    <word>Replicator</word>
+    <word>Transmission</word>
+    <word>Probe</word>
+    <word>Lost Boy</word>
+    <word>Cover-up</word>
+  </wheel>
+</brainstormer>
