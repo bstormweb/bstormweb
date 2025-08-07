@@ -3,7 +3,7 @@ import Post from "./collections/post";
 import WheelSet from "./collections/wheelset";
 
 export default defineConfig({
-  clientId: process.env.TINA_CLIENT_ID!,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   branch:
     process.env.TINA_BRANCH! || // custom branch env override
     process.env.VERCEL_GIT_COMMIT_REF! || // Vercel branch env
