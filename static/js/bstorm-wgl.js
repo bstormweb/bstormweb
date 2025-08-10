@@ -383,7 +383,33 @@ function wheelCoordsToAngle(x, y) {
   return rawAngle;
 }
 
+function handleTouchDown(event) {
+  const touch = event.targetTouches[0];
+  var rect = glcanvas.getBoundingClientRect();
+  var canvasX = touch.clientX - rect.left;
+  var canvasY = touch.clientY - rect.top;
+
+  handleMouseOrTouchDown(canvasX, canvasY);
+}
+
 function handleMouseDown(event) {
+  var rect = glcanvas.getBoundingClientRect();
+  var canvasX = event.clientX - rect.left;
+  var canvasY = event.clientY - rect.top;
+
+  handleMouseOrTouchDown(canvasX, canvasY);
+}
+
+function handleTouchMove(event) {
+  const touch = event.targetTouches[0];
+  var rect = glcanvas.getBoundingClientRect();
+  var canvasX = touch.clientX - rect.left;
+  var canvasY = touch.clientY - rect.top;
+
+  handleMouseOrTouchMove(canvasX, canvasY);
+}
+
+function handleMouseOrTouchDown(canvasX, canvasY) {
   //console.log("In handleMouseDown");
 
   if (!glcanvas) return;
@@ -396,9 +422,9 @@ function handleMouseDown(event) {
 
   mouseDown = true;
 
-  var rect = glcanvas.getBoundingClientRect();
-  var canvasX = event.clientX - rect.left;
-  var canvasY = event.clientY - rect.top;
+  // var rect = glcanvas.getBoundingClientRect();
+  // var canvasX = event.clientX - rect.left;
+  // var canvasY = event.clientY - rect.top;
 
   // Wheel coords are -1,-1 to 1,1 and have 0,0 centered at wheel
   var wheelPos = screenToWheelCoords(canvasX, canvasY);
@@ -442,7 +468,7 @@ function randomSpinAll() {
   }
 }
 
-function handleMouseUp(event) {
+function handleMouseOrTouchUp(event) {
   if (!glcanvas) return;
 
   mouseDown = false;
@@ -453,17 +479,27 @@ function handleMouseUp(event) {
 
   grabbedWheel = -1;
 
-  var wheelPos = screenToWheelCoords(event.layerX, event.layerY);
+  //var wheelPos = screenToWheelCoords(event.layerX, event.layerY);
 }
 
 function handleMouseMove(event) {
+  if (!glcanvas) return;
+
+  var rect = glcanvas.getBoundingClientRect();
+  var canvasX = event.clientX - rect.left;
+  var canvasY = event.clientY - rect.top;
+
+  handleMouseOrTouchMove(canvasX, canvasY);
+}
+
+function handleMouseOrTouchMove(canvasX, canvasY) {
   if (!glcanvas) return;
 
   if (!mouseDown) {
     return;
   }
 
-  var wheelPos = screenToWheelCoords(event.layerX, event.layerY);
+  var wheelPos = screenToWheelCoords(canvasX, canvasY);
   //console.log("Mouse Move " + wheelPos[0] + "  " + wheelPos[1] );
 
   // console.log( "Mouse move "+ event.clientX + "  " + event.clientY );
@@ -603,8 +639,16 @@ function getXmlWords(wheelTag) {
 function setup_bstorm(canvas, xmlWheelInfo) {
   // Set up mouse handlers
   canvas.onmousedown = handleMouseDown;
-  document.onmouseup = handleMouseUp;
+  document.onmouseup = handleMouseOrTouchUp;
   document.onmousemove = handleMouseMove;
+
+  document.ontouchstart = handleTouchDown;
+  document.ontouchmove = handleTouchMove;
+  document.ontouchend = handleMouseOrTouchUp;
+
+  // document.ontouchmove = (event) => {
+  //   console.log("Touch Move", event);
+  // };
 
   // Draw the word list on the canvas and create a texture from it
   var wordCanvas = document.getElementById("bstorm_words");
@@ -713,7 +757,6 @@ function bstorm_main(wheelSet) {
     return;
   }
 
-  console.log("Wheelset is ", wheelSet);
   if (wheelSet === undefined) {
     wheelSet = "/wheels/bstorm.xml";
   }

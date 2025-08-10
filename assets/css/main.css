@@ -3,10 +3,10 @@
 
 /* Custom CSS variables */
 :root {
-  --bstorm-bg: #EED89F;
-  --bstorm-white: #FDFDE9;
-  --bstorm-bright: #DEE391;
-  --bstorm-black: #3A332C;
+  --bstorm-bg: #eed89f;
+  --bstorm-white: #fdfde9;
+  --bstorm-bright: #dee391;
+  --bstorm-black: #3a332c;
 }
 
 /* Custom Tailwind utilities */
@@ -26,9 +26,13 @@
   .border-bstorm-white {
     border-color: var(--bstorm-white);
   }
+
+  .bstorm-canvas {
+    touch-action: none;
+  }
 }
 
 /* Custom background color */
 body {
-  background-color: #8E8167;
+  background-color: #8e8167;
 }
